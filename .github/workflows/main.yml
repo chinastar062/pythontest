@@ -1,17 +1,6 @@
 name: Python application
 
-on: 
-  release:
-    types: [published]
-  push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - master
- # schedule:
-   # - cron: '0 0 8 1/1 * ? *'
-  watch:
-    types: [started]
+on: [push]
 
 jobs:
   build:
@@ -19,13 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout actions
     - uses: actions/checkout@v1
-
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7	
+        python-version: 3.7
     - name: Update paper list
       run: |
         python test.py
