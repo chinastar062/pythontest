@@ -9,8 +9,6 @@ local = time.localtime(time.time())
 a = int(random.randint(10, 200))
 b = os.getcwd()
 c = str(random.randint(1, 10000))
-#新建一个文件夹
-os.mkdir(b+'\info')
 # 写入文件
 for i in range(a):
     f = open(b+'/info/'+c+'.txt', 'a')
